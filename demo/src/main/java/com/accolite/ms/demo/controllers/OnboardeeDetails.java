@@ -24,15 +24,6 @@ public class OnboardeeDetails {
         String sql= "SELECT board_details.Name as name, board_details.age as age, board_details.company as company, board_details.location as location, board_details.emailID as emailID, board_demand.demandID as demandID, board_status.b_status as bg_check, board_status.boarding_status as onboardingStatus FROM board_details INNER JOIN board_demand ON board_details.id = board_demand.id INNER JOIN board_status ON board_demand.id = board_status.id";
         
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(OnboardeeEnt.class));
-        // try {
-        //     // return jdbcTemplate.queryForList(sql, OnboardeeEnt.class);
-        //     return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(OnboardeeEnt.class));
-        // } catch (DataAccessException e) {
-        //     System.out.println("Data Access Exception\t" + e.toString());
-        //     return null;
-        // } catch (Exception e) {
-        //     System.out.println("Exception\t" + e.toString());
-        //     return null;
-        // }
+        
     }
 }
