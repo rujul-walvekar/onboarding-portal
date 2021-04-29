@@ -1,0 +1,9 @@
+CREATE TABLE `onboardee`.`board_details` ( `Name` CHAR(50) NULL DEFAULT NULL , `age` INT(3) NULL DEFAULT NULL , `num` INT(15) NULL DEFAULT NULL , `company` VARCHAR(100) NULL DEFAULT NULL , `location` VARCHAR(200) NULL , `cgpa` INT(10) NULL ) ENGINE = InnoDB;
+
+INSERT INTO `board_details` (`Name`, `age`, `num`, `company`, `location`, `cgpa`, `skills`, `emailID`, `id`) VALUES ('Rujul Walvekar', '21', '2147483647', 'Morgan Stanley', 'Mumbai', '8.62', 'C++, Java, Angular', 'rujul.walvekar@accolitedigital.com', NULL);
+
+INSERT INTO `board_status` (`b_status`, `id`, `boarding_status`) VALUES ('YEs', '2', '12');
+
+SELECT `board_details`.Name, `board_details`.age, `board_details`.company, `board_details`.location, `board_details`.emailID, `board_demand`.demandID, `board_status`.b_status, `board_status`.boarding_status FROM `board_details` INNER JOIN `board_demand` ON `board_details`.`id` = `board_demand`.`id` INNER JOIN `board_status` ON `board_demand`.`id` = `board_status`.`id`
+
+SELECT board_details.Name as name, board_details.age as age, board_details.company as company, board_details.location as location, board_details.emailID as emailID, board_demand.demandID as demandID, board_status.b_status as bg_check, board_status.boarding_status as onboardingStatus FROM board_details INNER JOIN board_demand ON board_details.id = board_demand.id INNER JOIN board_status ON board_demand.id = board_status.id;
