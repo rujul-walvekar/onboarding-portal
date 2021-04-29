@@ -1,0 +1,11 @@
+// try {
+        //     // return jdbcTemplate.queryForList(sql, OnboardeeEnt.class);
+        //     return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(OnboardeeEnt.class));
+        // } catch (DataAccessException e) {
+        //     System.out.println("Data Access Exception\t" + e.toString());
+        //     return null;
+        // } catch (Exception e) {
+        //     System.out.println("Exception\t" + e.toString());
+        //     return null;
+        // }
+onboardee:details
