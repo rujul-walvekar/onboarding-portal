@@ -7,3 +7,29 @@ INSERT INTO `board_status` (`b_status`, `id`, `boarding_status`) VALUES ('YEs', 
 SELECT `board_details`.Name, `board_details`.age, `board_details`.company, `board_details`.location, `board_details`.emailID, `board_demand`.demandID, `board_status`.b_status, `board_status`.boarding_status FROM `board_details` INNER JOIN `board_demand` ON `board_details`.`id` = `board_demand`.`id` INNER JOIN `board_status` ON `board_demand`.`id` = `board_status`.`id`
 
 SELECT board_details.Name as name, board_details.age as age, board_details.company as company, board_details.location as location, board_details.emailID as emailID, board_demand.demandID as demandID, board_status.b_status as bg_check, board_status.boarding_status as onboardingStatus FROM board_details INNER JOIN board_demand ON board_details.id = board_demand.id INNER JOIN board_status ON board_demand.id = board_status.id;
+
+With Admin
+SELECT board_details.Name as name, board_details.age as age, board_details.company as company, board_details.location as location, board_details.emailID as emailID, board_demand.demandID as demandID, board_status.b_status as bg_check, board_status.boarding_status as onboardingStatus admin.a_name as adminName FROM board_details INNER JOIN board_status ON board_details.id = board_status.id INNER JOIN board_demand ON board_status.id = board_demand.id INNER JOIN admin ON board_demand.adminID= admin.adminID
+
+Trial
+SELECT admin.a_name as adminName, admin.a_num as adminNum, admin.a_email as adminEmailID, board_details.Name as name, board_details.age as age, board_details.company as company, board_details.location as location, board_details.emailID as emailID, board_status.b_status as bg_check, board_status.boarding_status as onboardingStatus FROM board_details INNER JOIN board_status ON board_details.id = board_status.id INNER JOIN board_demand ON board_status.id = board_demand.id INNER JOIN admin ON board_demand.adminID= admin.adminID
+
+This is the one for admin where all admin and only onboardees with status set are shown
+SELECT admin.a_name as adminName, admin.a_num as adminNum, admin.a_email as adminEmailID, board_details.Name as name, board_details.age as age, board_details.company as company, board_details.location as location, board_details.emailID as emailID, board_status.b_status as bg_check, board_status.boarding_status as onboardingStatus FROM board_details INNER JOIN board_status ON board_details.id = board_status.id INNER JOIN board_demand ON board_status.id = board_demand.id RIGHT JOIN admin ON board_demand.adminID= admin.adminID
+
+DoesntWork
+SELECT admin.a_name as adminName, admin.a_num as adminNum, admin.a_email as adminEmailID, board_details.Name as name, board_details.age as age, board_details.company as company, board_details.location as location, board_details.emailID as emailID, board_status.b_status as bg_check, board_status.boarding_status as onboardingStatus FROM board_details INNER JOIN board_status ON board_details.adminID = board_status.adminID INNER JOIN board_demand ON board_status.adminID = board_demand.adminID JOIN admin ON board_demand.adminID= admin.adminID
+
+SELECT admin.a_name as adminName, admin.a_num as adminNum, admin.a_email as adminEmailID, board_details.Name as name, board_details.age as age, board_details.company as company, board_details.location as location, board_details.emailID as emailID, board_status.b_status as bg_check, board_status.boarding_status as onboardingStatus FROM board_details INNER JOIN board_status ON board_details.adminID = board_status.adminID INNER JOIN board_demand ON board_status.adminID = board_demand.adminID RIGHT JOIN admin ON board_demand.adminID= admin.adminID
+
+//         @GetMapping("/AdminDetails")
+//         public List<OnboardeeEnt> shouldGetAllOnboardeesForAdmin() {
+//     // Read values from Onboardee, Demand & Admin Table
+    
+//             String sql= "SELECT `admin`.`a_name` as adminName, `admin`.`a_num` as adminNum, `admin`.`a_email` as adminEmailID, `board_details`.`Name` as name, `board_details`.`age` as age, `board_details`.company as company, board_details.location as location, board_details.emailID as emailID, board_status.b_status as bg_check, board_status.boarding_status as onboardingStatus FROM board_details INNER JOIN board_status ON board_details.id = board_status.id INNER JOIN board_demand ON board_status.id = board_demand.id RIGHT JOIN admin ON board_demand.adminID= admin.adminID";
+            
+//             return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(OnboardeeEnt.class));
+        
+//     }
+
+UPDATE board_details SET location= 'Wakanda' WHERE emailID='rujul.walvekar@accolitedigital.com';
