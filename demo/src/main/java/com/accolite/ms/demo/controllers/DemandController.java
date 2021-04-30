@@ -1,6 +1,6 @@
 package com.accolite.ms.demo.controllers;
 
-import com.accolite.ms.demo.entities.DemandEnt;
+import com.accolite.ms.demo.model.DemandEnt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
