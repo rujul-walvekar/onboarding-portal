@@ -22,7 +22,7 @@ public class OnboardeeRepImplement implements OnboardeeRepo {
     private static final String GET_ONBOARDEE_BY_EMAILID = "SELECT * FROM board_details WHERE emailID=?";
     private static final String DELETE_ONBOARDEE_BY_EMAILID = "DELETE FROM board_details WHERE emailID=?";
     private static final String GET_ONBOARDEES = "SELECT * FROM board_details";
-    private static final String GET_ALL = "board_details.Name, board_details.age, board_details.company, board_details.location, board_details.emailID, board_demand.demandID, board_status.b_status, board_status.boarding_status FROM board_details INNER JOIN board_demand ON board_details.id = board_demand.id INNER JOIN board_status ON board_demand.id = board_status.id";
+    private static final String GET_ALL = "SELECT board_details.Name, board_details.age, board_details.company, board_details.location, board_details.emailID, board_demand.demandID, board_status.bg_Check, board_status.boarding_status FROM board_details INNER JOIN board_demand ON board_details.id = board_demand.id INNER JOIN board_status ON board_demand.id = board_status.id";
     @Autowired
     private JdbcTemplate jdbcTemplate;
     // private JdbcTemplate template;

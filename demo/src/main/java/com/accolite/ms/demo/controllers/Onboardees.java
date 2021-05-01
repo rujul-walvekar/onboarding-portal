@@ -3,6 +3,7 @@ package com.accolite.ms.demo.controllers;
 import com.accolite.ms.demo.model.DemandEnt;
 import com.accolite.ms.demo.model.OnboardeeEnt;
 import com.accolite.ms.demo.model.StatusEnt;
+import com.accolite.ms.demo.functions.OnboardeeRepImplement;
 import com.accolite.ms.demo.functions.OnboardeeRepo;
 
 import java.util.List;
@@ -14,7 +15,9 @@ import org.springframework.web.bind.annotation.*;
 public class Onboardees {
     @Autowired
     OnboardeeRepo onboardRepo;
-    OnboardeeEnt onboardee;
+    @Autowired
+    OnboardeeRepImplement onboardeeRepImplement;
+    // OnboardeeEnt onboardee;
     DemandEnt demand;
     StatusEnt status;
 
@@ -41,7 +44,7 @@ public class Onboardees {
     }
     @GetMapping("/adminsall")
     public List<OnboardeeEnt> getAll() {
-        return onboardRepo.allOnboardeeEnts();
+        return onboardeeRepImplement.getAll();
     }
 
     @DeleteMapping("/user/{emailID}")

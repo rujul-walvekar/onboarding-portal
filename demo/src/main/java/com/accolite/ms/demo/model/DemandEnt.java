@@ -1,5 +1,8 @@
 package com.accolite.ms.demo.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class DemandEnt{
 
     Integer demandID;
