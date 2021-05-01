@@ -8,46 +8,18 @@ public class OnboardeeEnt {
     private String company;
     private String location;
     private String emailID;
-    private Integer demandID;
-    private String bg_check;
-    private String onboardingStatus;
-    private String adminName;
-    private String adminNum;
+    private Float cgpa;
+    private List<String> skills;
 
-    // private String adminEmailID;
-    // private Float cgpa;
-    // private List<String> skills;
-    public OnboardeeEnt() {
-    }
-    public String getAdminName() {
-        return this.adminName;
-    }
+    // public OnboardeeEnt() {
+    // }
 
-    public void setAdminName(String adminName) {
-        this.adminName = adminName;
-    }
-
-    public String getAdminNum() {
-        return this.adminNum;
-    }
-
-    public void setAdminNum(String adminNum) {
-        this.adminNum = adminNum;
-    }
     public String getEmailID() {
         return this.emailID;
     }
 
     public void setEmailID(String emailID) {
         this.emailID = emailID;
-    }
-
-    public Integer getDemandID() {
-        return this.demandID;
-    }
-
-    public void setDemandID(Integer demandID) {
-        this.demandID = demandID;
     }
 
     public String getName() {
@@ -82,35 +54,20 @@ public class OnboardeeEnt {
         this.location = location;
     }
 
-    // public Float getCgpa() {
-    //     return this.cgpa;
-    // }
-
-    // public void setCgpa(Float cgpa) {
-    //     this.cgpa = cgpa;
-    // }
-
-    // public List<String> getSkills() {
-    //     return this.skills;
-    // }
-
-    // public void setSkills(List<String> skills) {
-    //     this.skills = skills;
-    // }
-
-    public String getBg_check() {
-        return this.bg_check;
+    public Float getCgpa() {
+        return this.cgpa;
     }
 
-    public void setBg_check(String bg_check) {
-        this.bg_check = bg_check;
+    public void setCgpa(Float cgpa) {
+        this.cgpa = cgpa;
     }
 
-    public String getOnboardingStatus() {
-        return this.onboardingStatus;
+    public List<String> getSkills() {
+        return this.skills;
     }
 
-    public void setOnboardingStatus(String onboardingStatus) {
-        this.onboardingStatus = onboardingStatus;
+    public void setSkills(List<String> skills) {
+        this.skills = skills;
     }
+
 }
