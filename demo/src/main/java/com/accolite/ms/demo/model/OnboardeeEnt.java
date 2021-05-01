@@ -1,26 +1,33 @@
 package com.accolite.ms.demo.model;
 
-import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+// import java.util.List;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class OnboardeeEnt {
     private String name;
     private Integer age;
+    private Integer num;
     private String company;
     private String location;
-    private String emailID;
     private Float cgpa;
-    private List<String> skills;
+    private String skills;
+    private String emailID;
 
-    // public OnboardeeEnt() {
-    // }
-
-    public String getEmailID() {
-        return this.emailID;
+    public OnboardeeEnt(String name, int age, int num, String company, String location, Float cgpa, String skills ) {
+        this.name = name;
+        this.age = age;
+        this.num = num;
+        this.company = company;
+        this.location = location;
+        this.cgpa = cgpa;
+        this.skills = skills;
     }
-
-    public void setEmailID(String emailID) {
-        this.emailID = emailID;
-    }
+	
 
     public String getName() {
         return this.name;
@@ -36,6 +43,14 @@ public class OnboardeeEnt {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public Integer getNum() {
+        return this.num;
+    }
+
+    public void setNum(Integer num) {
+        this.num = num;
     }
 
     public String getCompany() {
@@ -62,12 +77,21 @@ public class OnboardeeEnt {
         this.cgpa = cgpa;
     }
 
-    public List<String> getSkills() {
+    public String getSkills() {
         return this.skills;
     }
 
-    public void setSkills(List<String> skills) {
+    public void setSkills(String skills) {
         this.skills = skills;
     }
+
+    public String getEmailID() {
+        return this.emailID;
+    }
+
+    public void setEmailID(String emailID) {
+        this.emailID = emailID;
+    }
+
 
 }
