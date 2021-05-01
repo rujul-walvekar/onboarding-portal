@@ -1,8 +1,8 @@
 package com.accolite.ms.demo.functions;
 
 import com.accolite.ms.demo.model.OnboardeeEnt;
-
-// import org.springframework.stereotype.Repository;
+import com.accolite.ms.demo.model.DemandEnt;
+import com.accolite.ms.demo.model.StatusEnt;
 
 import java.util.List;
 
@@ -17,5 +17,6 @@ public interface OnboardeeRepo {
     String deleteOnboardeeByEmailID(String emailID);
 
     List<OnboardeeEnt> allOnboardeeEnts();
+    List<OnboardeeEnt> getAll();
 }
 

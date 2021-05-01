@@ -1,6 +1,8 @@
 package com.accolite.ms.demo.controllers;
 
+import com.accolite.ms.demo.model.DemandEnt;
 import com.accolite.ms.demo.model.OnboardeeEnt;
+import com.accolite.ms.demo.model.StatusEnt;
 import com.accolite.ms.demo.functions.OnboardeeRepo;
 
 import java.util.List;
@@ -13,6 +15,8 @@ public class Onboardees {
     @Autowired
     OnboardeeRepo onboardRepo;
     OnboardeeEnt onboardee;
+    DemandEnt demand;
+    StatusEnt status;
 
     @PostMapping("/user")
     public OnboardeeEnt createOnboardee(@RequestBody OnboardeeEnt onboardee) {
@@ -33,6 +37,10 @@ public class Onboardees {
 
     @GetMapping("/users")
     public List<OnboardeeEnt> getOnboardees() {
+        return onboardRepo.allOnboardeeEnts();
+    }
+    @GetMapping("/adminsall")
+    public List<OnboardeeEnt> getAll() {
         return onboardRepo.allOnboardeeEnts();
     }
 
