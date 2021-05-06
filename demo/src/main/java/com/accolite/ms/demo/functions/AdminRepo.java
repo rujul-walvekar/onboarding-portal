@@ -1,17 +1,17 @@
-package com.accolite.ms.demo.functions;
+// package com.accolite.ms.demo.functions;
 
-import java.util.List;
+// import java.util.List;
 
-import com.accolite.ms.demo.model.AdminEnt;
+// import com.accolite.ms.demo.model.AdminEnt;
 
-public interface AdminRepo {
-    AdminEnt createAdminEnt(AdminEnt admin);
+// public interface AdminRepo {
+//     AdminEnt createAdminEnt(AdminEnt admin);
 
-    AdminEnt updateAdminEnt(AdminEnt admin);
+//     AdminEnt updateAdminEnt(AdminEnt admin);
 
-    AdminEnt getAdminByEmailID(String emailID);
+//     AdminEnt getAdminByEmailID(String emailID);
 
-    String deleteAdminByEmailID(String emailID);
+//     String deleteAdminByEmailID(String emailID);
 
-    List<AdminEnt> allAdminEnts();
-}
+//     List<AdminEnt> allAdminEnts();
+// }
