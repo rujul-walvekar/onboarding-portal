@@ -41,3 +41,69 @@ ALTER TABLE `board_status` ADD FOREIGN KEY (`adminID`) REFERENCES `admin`(`admin
 ALTER TABLE `board_demand` ADD FOREIGN KEY (`adminID`) REFERENCES `admin`(`adminID`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 ALTER TABLE `board_status` ADD `adminID` INT NULL DEFAULT NULL AFTER `boarding_status`, ADD `id` INT NULL DEFAULT NULL AFTER `adminID`;
+
+// private static final String GET_ALL = "SELECT board_details.Name, board_details.age, board_details.company, board_details.location, board_details.emailID, board_demand.demandID, board_status.bg_Check, board_status.boarding_status FROM board_details INNER JOIN board_demand ON board_details.id = board_demand.id INNER JOIN board_status ON board_demand.id = board_status.id";
+
+SELECT admin.a_name as adminName, admin.a_num as adminNum, admin.a_email as adminEmailID, board_details.Name as name, board_details.age as age, board_details.company as company, board_details.location as location, board_details.emailID as emailID, board_status.bg_Check as bgCheck, board_status.boarding_status as onboardingStatus FROM board_details INNER JOIN board_status ON board_details.id = board_status.id INNER JOIN board_demand ON board_status.id = board_demand.id RIGHT JOIN admin ON board_demand.adminID= admin.adminID
+
+public AdminEnt updateAdminEnt(AdminEnt admin) {
+        OnboardeeEnt onboardee= new OnboardeeEnt(null, 0, null, null, null, null, null);
+        System.out.println(admin);
+        jdbcTemplate.update(UPDATE_SET_ADMIN,admin.getAdminName(), admin.getAdminNum(),onboardee.getName(),onboardee.getEmailID(), admin.getAdminEmailID());
+        return admin;
+
+
+
+package com.accolite.ms.demo.model;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class AdminEnt {
+
+    private String adminName;
+    private String adminNum;
+    private String adminEmailID;
+    private OnboardeeEnt onboardee;
+
+    public AdminEnt(String adminName, String adminNum, String adminEmailID) {
+        this.adminName = adminName;
+        this.adminNum = adminNum;
+        this.adminEmailID = adminEmailID;
+    }
+    public AdminEnt(){
+        
+    }
+
+    public String getAdminName() {
+        return this.adminName;
+    }
+
+    public void setAdminName(String adminName) {
+        this.adminName = adminName;
+    }
+
+    public String getAdminNum() {
+        return this.adminNum;
+    }
+
+    public void setAdminNum(String adminNum) {
+        this.adminNum = adminNum;
+    }
+
+    public String getAdminEmailID() {
+        return this.adminEmailID;
+    }
+
+    public void setAdminEmailID(String adminEmailID) {
+        this.adminEmailID = adminEmailID;
+    }
+    public void setOnboardee(OnboardeeEnt onboardee) {
+        this.onboardee = onboardee;
+    }
+	public OnboardeeEnt getOnboadee() {
+		return this.onboardee;    
+}
+}
+
+    
