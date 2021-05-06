@@ -1,18 +1,18 @@
-package com.accolite.ms.demo.model;
+// package com.accolite.ms.demo.model;
 
-import org.springframework.stereotype.Component;
+// import org.springframework.stereotype.Component;
 
-@Component
-public class DemandEnt{
+// @Component
+// public class DemandEnt{
 
-    Integer demandID;
+//     Integer demandID;
 
-    public Integer getDemandID() {
-        return this.demandID;
-    }
+//     public Integer getDemandID() {
+//         return this.demandID;
+//     }
 
-    public void setDemandID(Integer demandID) {
-        this.demandID = demandID;
-    }
+//     public void setDemandID(Integer demandID) {
+//         this.demandID = demandID;
+//     }
 
-}
+// }

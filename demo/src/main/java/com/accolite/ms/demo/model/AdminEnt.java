@@ -1,41 +1,53 @@
-package com.accolite.ms.demo.model;
+// package com.accolite.ms.demo.model;
 
-public class AdminEnt {
+// import org.springframework.stereotype.Component;
 
-    private String adminName;
-    private String adminNum;
-    private String adminEmailID;
+// @Component
+// public class AdminEnt {
 
-    public AdminEnt(String adminName, String adminNum, String adminEmailID) {
-        this.adminName = adminName;
-        this.adminNum = adminNum;
-        this.adminEmailID = adminEmailID;
-    }
+//     private String adminName;
+//     private String adminNum;
+//     private String adminEmailID;
+//     private OnboardeeEnt onboardee;
 
-    public String getAdminName() {
-        return this.adminName;
-    }
+//     public AdminEnt(String adminName, String adminNum, String adminEmailID) {
+//         this.adminName = adminName;
+//         this.adminNum = adminNum;
+//         this.adminEmailID = adminEmailID;
+//     }
+//     public AdminEnt(){
+        
+//     }
 
-    public void setAdminName(String adminName) {
-        this.adminName = adminName;
-    }
+//     public String getAdminName() {
+//         return this.adminName;
+//     }
 
-    public String getAdminNum() {
-        return this.adminNum;
-    }
+//     public void setAdminName(String adminName) {
+//         this.adminName = adminName;
+//     }
 
-    public void setAdminNum(String adminNum) {
-        this.adminNum = adminNum;
-    }
+//     public String getAdminNum() {
+//         return this.adminNum;
+//     }
 
-    public String getAdminEmailID() {
-        return this.adminEmailID;
-    }
+//     public void setAdminNum(String adminNum) {
+//         this.adminNum = adminNum;
+//     }
 
-    public void setAdminEmailID(String adminEmailID) {
-        this.adminEmailID = adminEmailID;
-    }
-    
-}
+//     public String getAdminEmailID() {
+//         return this.adminEmailID;
+//     }
+
+//     public void setAdminEmailID(String adminEmailID) {
+//         this.adminEmailID = adminEmailID;
+//     }
+//     public void setOnboardee(OnboardeeEnt onboardee) {
+//         this.onboardee = onboardee;
+//     }
+// 	public OnboardeeEnt getOnboadee() {
+// 		return this.onboardee;    
+// }
+// }
 
     

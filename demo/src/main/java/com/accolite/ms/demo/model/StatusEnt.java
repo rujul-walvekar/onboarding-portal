@@ -1,25 +1,25 @@
-package com.accolite.ms.demo.model;
+// package com.accolite.ms.demo.model;
 
-import org.springframework.stereotype.Component;
+// import org.springframework.stereotype.Component;
 
-@Component
-public class StatusEnt{
-    String bgCheck;
-    String onboardingStatus;
+// @Component
+// public class StatusEnt{
+//     String bgCheck;
+//     String onboardingStatus;
 
-    public String getBgCheck() {
-        return this.bgCheck;
-    }
+//     public String getBgCheck() {
+//         return this.bgCheck;
+//     }
 
-    public void setBgCheck(String bgCheck) {
-        this.bgCheck = bgCheck;
-    }
+//     public void setBgCheck(String bgCheck) {
+//         this.bgCheck = bgCheck;
+//     }
 
-    public String getOnboardingStatus() {
-        return this.onboardingStatus;
-    }
+//     public String getOnboardingStatus() {
+//         return this.onboardingStatus;
+//     }
 
-    public void setOnboardingStatus(String onboardingStatus) {
-        this.onboardingStatus = onboardingStatus;
-    }
-}
+//     public void setOnboardingStatus(String onboardingStatus) {
+//         this.onboardingStatus = onboardingStatus;
+//     }
+// }
