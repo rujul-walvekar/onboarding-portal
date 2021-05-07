@@ -9,6 +9,7 @@ import com.accolite.ms.demo.entity.OnboardeeEnt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:4200")//for angular
 @RestController
 public class OnboardeeController {
     
