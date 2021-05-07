@@ -1,0 +1,105 @@
+app.component.css
+
+.topnav {
+    background-color: #eee;
+    overflow: hidden;
+
+    button {
+        margin: 5px 5px;
+    }
+  }
+
+app.component.html
+
+<div>
+  <div class="topnav" *ngIf = "loginService.getLoginStatus()"></div>
+  <router-outlet></router-outlet>
+</div>
+
+app.component.ts
+
+
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+import { SessionStorageService } from 'angular-web-storage';
+import { SocialloginService } from '../app/providers/login/sociallogin.service';
+import { SocialLoginModule, AuthServiceConfig, AuthService } from 'angular-6-social-login';
+// import { Socialusers } from '../../models/login/Socialusers';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent implement OnInit {
+  title = 'Onboarding-portal';
+  sessionName: string;
+
+
+  loggedIn: boolean;
+  constructor(
+    public router: Router,
+    public session: SessionStorageService,
+    public loginService: SocialloginService,
+    public OAuth: AuthService) {
+  }
+
+  ngOnInit() {
+    console.log("Hello! I'm logging you in");
+    this.loggedIn = this.loginService.getLoginStatus();
+    if (this.loggedIn) {
+      this.sessionName = this.session.get('user').empName;
+    }
+  }
+
+  getImgUrl() {
+    return 'url(' + this.session.get('user').empImage + ')';
+  }
+
+  logout() {
+    this.session.remove('user');
+    this.loggedIn = this.loginService.getLoginStatus();
+    this.OAuth.signOut().then(data => {
+      this.router.navigate(['/login']);
+    });
+
+  }
+}
+
+app.module.ts
+
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { LoginComponent } from './components/login/login.component';
+
+
+export function socialConfigs() {
+  const config = new AuthServiceConfig(
+    [
+      {
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider('422614742250-ehigpoc263kibvo3ml1hdvpnbnces95i.apps.googleusercontent.com')
+      }
+    ]
+  );
+  return config;
+}
+
+@NgModule({
+  declarations: [	
+    AppComponent,
+      LoginComponent
+   ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
