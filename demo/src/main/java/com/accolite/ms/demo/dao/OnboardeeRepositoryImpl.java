@@ -51,8 +51,8 @@ public class OnboardeeRepositoryImpl implements OnboardeeRepository {
     @Override
     public String deleteByID(String emailID) {
         jdbcTemplate.update(DELETE_ONBOARDEE_BY_ID, emailID);
-        return "User got deleted with id " + emailID;
-        // return null;
+        // return "User got deleted with id " + emailID;
+        return null;
     }
 
     @Override

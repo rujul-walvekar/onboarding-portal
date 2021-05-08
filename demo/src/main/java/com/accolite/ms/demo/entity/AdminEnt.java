@@ -6,14 +6,14 @@ import org.springframework.stereotype.Component;
 public class AdminEnt {
 
     private String aName;
-    private String aEmail;
     private String aNum;
+    private String aEmail;
 
-    public AdminEnt(String aName, String aEmail, String aNum) {
+    public AdminEnt(String aName, String aNum,String aEmail) {
 
         this.aName = aName;
-        this.aEmail = aEmail;
         this.aNum = aNum;
+        this.aEmail = aEmail;
     }
 
     public AdminEnt() {

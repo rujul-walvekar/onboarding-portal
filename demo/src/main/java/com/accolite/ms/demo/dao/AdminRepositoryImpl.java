@@ -42,7 +42,9 @@ public class AdminRepositoryImpl implements AdminRepository{
     @Override
     public String deleteAdminByEmailID(String aEmail) {
         jdbcTemplate.update(DELETE_ADMIN_BY_EMAILID, aEmail);
-        return "User got deleted with id " + aEmail;
+        // return "User got deleted with id " + aEmail;
+        return null;
+
     }
 
     @Override
