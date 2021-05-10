@@ -22,7 +22,7 @@ public class OnboardeeRepositoryImpl implements OnboardeeRepository {
     private static final String GET_ONBOARDEE_BY_ID = "SELECT * FROM BOARD_DETAILS WHERE emailID=?";
     private static final String DELETE_ONBOARDEE_BY_ID = "DELETE FROM BOARD_DETAILS WHERE emailID=?";
     private static final String GET_ONBOARDEE_QUERY = "SELECT * FROM BOARD_DETAILS";
-    private static final String GET_ALL = "SELECT board_details.Name, board_details.age, board_details.company, board_details.location, board_details.emailID, board_details.demandID, board_details.bgCheck, board_details.boardingStatus, admin.aName, admin.aNum, admin.aEmail FROM board_details INNER JOIN admin ON board_details.adminID = admin.adminID";
+    private static final String GET_ALL = "SELECT board_details.Name, board_details.age, board_details.company, board_details.location, board_details.emailID, board_details.demandID, board_details.bgCheck, board_details.boardingStatus FROM board_details";
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -71,7 +71,6 @@ public class OnboardeeRepositoryImpl implements OnboardeeRepository {
             List<OnboardeeEnt> list=new ArrayList<OnboardeeEnt>();
             while(rs.next()){
                 OnboardeeEnt onboardee=new OnboardeeEnt(null, 0, null, null, null, 0, null, null, 0, null, null);
-                AdminEnt admin=new AdminEnt();
 
                 onboardee.setName(rs.getString("name"));
                 onboardee.setCompany(rs.getString("company"));
@@ -80,10 +79,6 @@ public class OnboardeeRepositoryImpl implements OnboardeeRepository {
                 onboardee.setDemandID(rs.getInt("demandID"));
                 onboardee.setBgCheck(rs.getString("bg_Check"));
                 onboardee.setBoardingStatus(rs.getString("boarding_status"));
-                admin.setAName(rs.getString("aName"));
-                admin.setANum(rs.getString("aNum"));
-                admin.setAEmail(rs.getString("aEmail"));
-                onboardee.setAdmin(admin);
                 
                 list.add(onboardee);
 
