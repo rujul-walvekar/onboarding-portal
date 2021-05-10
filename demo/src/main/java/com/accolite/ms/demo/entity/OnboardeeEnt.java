@@ -1,5 +1,6 @@
 package com.accolite.ms.demo.entity;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.stereotype.Component;
 
 import lombok.AllArgsConstructor;
@@ -10,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Component
+@EntityScan
 
 public class OnboardeeEnt {
     private String name;
@@ -23,7 +25,6 @@ public class OnboardeeEnt {
     private Integer demandID;
     private String bgCheck;
     private String boardingStatus;
-    private AdminEnt admin;
 
 
     public OnboardeeEnt(String name, int age, String num, String company, String location, float cgpa, String skills, String emailID, int demandID, String bgCheck, String boardingStatus) {
@@ -38,10 +39,6 @@ public class OnboardeeEnt {
                 this.demandID = demandID;
                 this.bgCheck = bgCheck;
                 this.boardingStatus = boardingStatus;
-    }
-
-    public void setAdmin(AdminEnt admin) {
-        this.admin = admin;
     }
 
     public String getName() {
